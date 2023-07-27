@@ -2,6 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 
 import { HeroesComponent } from './heroes.component';
+import { HeroDetailComponent } from '../hero-detail/hero-detail.component';
 // import { Hero } from '../hero';
 import { HEROES } from '../mock-heroes';
 
@@ -11,7 +12,7 @@ describe('HeroesComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [HeroesComponent],
+      declarations: [HeroesComponent, HeroDetailComponent],
       imports: [FormsModule]
     });
     fixture = TestBed.createComponent(HeroesComponent);
