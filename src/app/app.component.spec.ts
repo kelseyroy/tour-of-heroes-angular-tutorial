@@ -1,4 +1,5 @@
 import { TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
 
@@ -7,7 +8,8 @@ describe('AppComponent', () => {
     declarations: [
       AppComponent,
       HeroesComponent
-    ]
+    ],
+    imports: [FormsModule]
   }));
 
   it('should create the app', () => {
