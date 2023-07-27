@@ -3,7 +3,7 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Node.js CI
+name: Angular/Node.js CI
 
 on:
   push:
@@ -29,6 +29,6 @@ jobs:
       - name: Install Dependencies
         run: npm ci
       - name: Build
-        run: npm run build --if-present
+        run: ng build
       - name: Test
-        run: npm test -- --watch=false --browsers=ChromeHeadless
+        run: ng test --no-watch --no-progress
