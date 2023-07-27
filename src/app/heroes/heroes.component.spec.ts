@@ -2,7 +2,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 
 import { HeroesComponent } from './heroes.component';
-import { Hero } from '../hero';
+// import { Hero } from '../hero';
+import { HEROES } from '../mock-heroes';
 
 describe('HeroesComponent', () => {
   let component: HeroesComponent;
@@ -18,21 +19,24 @@ describe('HeroesComponent', () => {
     fixture.detectChanges();
   });
 
-  it(`should have a hero with the name 'Windstorm' and id 1`, () => {
+  it(`should have as heroes a list of mock heroes`, () => {
     const fixture = TestBed.createComponent(HeroesComponent);
     const app = fixture.componentInstance;
-    let hero: Hero = {
-      id: 1,
-      name: 'Windstorm'
-    };
-    expect(app.hero).toEqual(hero);
+    expect(app.heroes).toEqual(HEROES);
   });
 
-  it('should render Hero details', () => {
+  it('should render Heroes as header', () => {
     const fixture = TestBed.createComponent(HeroesComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('#hero')?.textContent).toContain('WINDSTORM Details');
+    expect(compiled.querySelector('#title')?.textContent).toContain('Heroes');
+  });
+
+  it('should render a hero name from mock heroes list', () => {
+    const fixture = TestBed.createComponent(HeroesComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('.name')?.textContent).toContain(HEROES[0].name);
   });
 
   // it('should render hero name', () => {
