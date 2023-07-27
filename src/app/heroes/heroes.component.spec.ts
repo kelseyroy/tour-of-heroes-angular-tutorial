@@ -15,7 +15,16 @@ describe('HeroesComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
+  it(`should have as hero 'Tour of Heroes Angular Tutorial'`, () => {
+    const fixture = TestBed.createComponent(HeroesComponent);
+    const app = fixture.componentInstance;
+    expect(app.hero).toEqual('Windstorm');
+  });
+
+  it('should render title', () => {
+    const fixture = TestBed.createComponent(HeroesComponent);
+    fixture.detectChanges();
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('#hero')?.textContent).toContain('Windstorm');
   });
 });
