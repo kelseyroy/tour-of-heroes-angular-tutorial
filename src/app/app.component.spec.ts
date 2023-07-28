@@ -3,13 +3,15 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+import { MessagesComponent } from './messages/messages.component';
 
 describe('AppComponent', () => {
   beforeEach(() => TestBed.configureTestingModule({
     declarations: [
       AppComponent,
       HeroesComponent,
-      HeroDetailComponent
+      HeroDetailComponent,
+      MessagesComponent
     ],
     imports: [FormsModule]
   }));
@@ -26,10 +28,10 @@ describe('AppComponent', () => {
     expect(app.title).toEqual('Tour of Heroes Angular Tutorial');
   });
 
-  it('should render title', () => {
+  it('should render title as h1', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('#title')?.textContent).toContain('Tour of Heroes Angular Tutorial');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Tour of Heroes Angular Tutorial');
   });
 });
