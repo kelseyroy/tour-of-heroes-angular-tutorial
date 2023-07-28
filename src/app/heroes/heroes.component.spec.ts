@@ -20,8 +20,9 @@ describe('HeroesComponent', () => {
     fixture.detectChanges();
   });
 
-  it(`should have as heroes a list of mock heroes`, () => {
+  it(`should have as heroes a list after component initialized`, () => {
     const fixture = TestBed.createComponent(HeroesComponent);
+    fixture.detectChanges();
     const app = fixture.componentInstance;
     expect(app.heroes).toEqual(HEROES);
   });
