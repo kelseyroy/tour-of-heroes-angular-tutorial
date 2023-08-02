@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 
 import { HeroesComponent } from './heroes.component';
 import { HeroDetailComponent } from '../hero-detail/hero-detail.component';
+import { AppRoutingModule } from '../app-routing.module';
 // import { Hero } from '../hero';
 import { HEROES } from '../mock-heroes';
 
@@ -13,7 +14,7 @@ describe('HeroesComponent', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [HeroesComponent, HeroDetailComponent],
-      imports: [FormsModule]
+      imports: [FormsModule, AppRoutingModule]
     });
     fixture = TestBed.createComponent(HeroesComponent);
     component = fixture.componentInstance;
@@ -34,11 +35,11 @@ describe('HeroesComponent', () => {
     expect(compiled.querySelector('#title')?.textContent).toContain('Heroes');
   });
 
-  it('should render a hero name from mock heroes list', () => {
+  it('should render a hero id from mock heroes list', () => {
     const fixture = TestBed.createComponent(HeroesComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.name')?.textContent).toContain(HEROES[0].name);
+    expect(compiled.querySelector('.badge')?.textContent).toContain(HEROES[0].id);
   });
 
   // it('should render hero name', () => {

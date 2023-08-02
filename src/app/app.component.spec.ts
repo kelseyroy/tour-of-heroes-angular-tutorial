@@ -12,7 +12,7 @@ describe('AppComponent', () => {
       AppComponent,
       HeroesComponent,
       HeroDetailComponent,
-      MessagesComponent
+      MessagesComponent,
     ],
     imports: [
       FormsModule,
