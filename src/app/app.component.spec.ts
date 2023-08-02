@@ -4,6 +4,7 @@ import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { MessagesComponent } from './messages/messages.component';
+import { AppRoutingModule } from './app-routing.module';
 
 describe('AppComponent', () => {
   beforeEach(() => TestBed.configureTestingModule({
@@ -11,9 +12,12 @@ describe('AppComponent', () => {
       AppComponent,
       HeroesComponent,
       HeroDetailComponent,
-      MessagesComponent
+      MessagesComponent,
     ],
-    imports: [FormsModule]
+    imports: [
+      FormsModule,
+      AppRoutingModule
+    ]
   }));
 
   it('should create the app', () => {
